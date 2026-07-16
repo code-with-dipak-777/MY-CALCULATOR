@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A premium glassmorphic calculator with custom dark/light modes and smooth micro-interactions.">
+    <title>Glassmorphic Calculator</title>
+    <!-- Import Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-theme">
+    <!-- Animated Background Blobs -->
+    <div class="bg-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <!-- Calculator Container -->
+    <main class="calculator-container">
+        <!-- Header with Mode/Theme Toggles -->
+        <header class="calculator-header">
+            <span class="brand">Antigravity</span>
+            <div class="header-controls">
+                <button id="sci-toggle" class="sci-btn" aria-label="Toggle Scientific Mode" title="Toggle Scientific Mode">Sci</button>
+                <button id="sound-toggle" class="sound-btn sound-on" aria-label="Toggle Sound" title="Toggle Click Sound">
+                    <i class="fa-solid fa-volume-high icon-sound-on"></i>
+                    <i class="fa-solid fa-volume-xmark icon-sound-off"></i>
+                </button>
+                <button id="theme-toggle" class="theme-btn" aria-label="Toggle Theme" title="Toggle Light/Dark Mode">
+                    <i class="fa-solid fa-moon icon-dark"></i>
+                    <i class="fa-solid fa-sun icon-light"></i>
+                </button>
+            </div>
+        </header>
+
+        <!-- Display Screen -->
+        <section class="calculator-display" aria-live="polite">
+            <div class="previous-operand" id="previous-operand"></div>
+            <div class="current-operand" id="current-operand">0</div>
+        </section>
+
+        <!-- Keypads Wrapper -->
+        <div class="calculator-keypads">
+            <!-- Scientific Keypad Panel -->
+            <section class="scientific-keypad">
+                <button class="btn btn-sci" data-sci="sin">sin</button>
+                <button class="btn btn-sci" data-sci="cos">cos</button>
+                <button class="btn btn-sci" data-sci="tan">tan</button>
+                <button class="btn btn-sci" data-sci="sqrt">&radic;</button>
+                <button class="btn btn-sci" data-sci="pow">x<sup>y</sup></button>
+                <button class="btn btn-sci" data-sci="log">log</button>
+                <button class="btn btn-sci" data-sci="ln">ln</button>
+                <button class="btn btn-sci" data-sci="pi">&pi;</button>
+                <button class="btn btn-sci" data-sci="e">e</button>
+                <button class="btn btn-sci" data-sci="factorial">x!</button>
+            </section>
+
+            <!-- Standard Keypad Panel -->
+            <section class="calculator-keypad">
+                <!-- Row 1: Actions -->
+                <button class="btn btn-action" id="clear" data-action="clear">AC</button>
+                <button class="btn btn-action" id="delete" data-action="delete">
+                    <i class="fa-solid fa-delete-left"></i>
+                </button>
+                <button class="btn btn-action" data-operator="%">%</button>
+                <button class="btn btn-operator" data-operator="/">&divide;</button>
+
+                <!-- Row 2: 7, 8, 9, * -->
+                <button class="btn btn-number" data-number="7">7</button>
+                <button class="btn btn-number" data-number="8">8</button>
+                <button class="btn btn-number" data-number="9">9</button>
+                <button class="btn btn-operator" data-operator="*">&times;</button>
+
+                <!-- Row 3: 4, 5, 6, - -->
+                <button class="btn btn-number" data-number="4">4</button>
+                <button class="btn btn-number" data-number="5">5</button>
+                <button class="btn btn-number" data-number="6">6</button>
+                <button class="btn btn-operator" data-operator="-">&minus;</button>
+
+                <!-- Row 4: 1, 2, 3, + -->
+                <button class="btn btn-number" data-number="1">1</button>
+                <button class="btn btn-number" data-number="2">2</button>
+                <button class="btn btn-number" data-number="3">3</button>
+                <button class="btn btn-operator" data-operator="+">&plus;</button>
+
+                <!-- Row 5: 00, 0, ., = -->
+                <button class="btn btn-number" data-number="00">00</button>
+                <button class="btn btn-number" data-number="0">0</button>
+                <button class="btn btn-number" data-number=".">.</button>
+                <button class="btn btn-equals" id="equals" data-action="calculate">&equals;</button>
+            </section>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
